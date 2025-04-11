@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FutureEd Hub</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+        <h2>FutureEd Hub</h2>
+        <ul>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Subjects</a></li>
+            <li><a href="#upload-section">Uploads</a></li>
+            <li><a href="#">Teachers' Portal</a></li>
+            <li><a href="#">Settings</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+        <!-- Slideshow Section -->
+        <div class="slideshow-container">
+            <img class="slide" src="static_image/banner1.jpg" alt="Educational Image">
+            <img class="slide" src="static_image/banner3.jpg" alt="Learning Environment">
+            <img class="slide" src="static_image/banner4.jpg" alt="Classroom">
+        </div>
+
+        <!-- Subjects Grid -->
+        <h2 class="section-title">Explore Subjects</h2>
+        <div class="subjects-grid">
+            <div class="subject"><img src="static_image/geography.jpg" alt="Geography"><span>Geography</span></div>
+            <div class="subject"><img src="static_image/mathematics.jpg" alt="Mathematics"><span>Mathematics</span></div>
+            <div class="subject"><img src="static_image/physics.jpg" alt="Physics"><span>Physics</span></div>
+            <div class="subject"><img src="static_image/chemistry.jpg" alt="Chemistry"><span>Chemistry</span></div>
+            <div class="subject"><img src="static_image/technology.jpg" alt="Technology"><span>Technology</span></div>
+            <div class="subject"><img src="static_image/agriculture.jpg" alt="Agriculture"><span>Agriculture</span></div>
+        </div>
+
+        <!-- History and Motto Section -->
+        <div class="history-motto-container">
+            <div class="history">
+                <img src="static_image/history.jpg" alt="History">
+                <span>History</span>
+            </div>
+            <div class="motto">
+                <h3>Our Future, Our Solutions</h3>
+                <p>Empowering teachers and students with a smart document management system for global education.</p>
+            </div>
+        </div>
+
+        <!-- Upload Section --> 	
+	<div id="upload-section" class="upload-section">
+            <div class="card">
+        	<h2>📤 Upload a Document</h2>
+        	<form id="uploadForm">
+            	    <label for="fileInput">Choose a file:</label><br />
+                    <input type="file" id="fileInput" name="file" required /><br /><br />
+
+                    <label for="subject">Subject:</label><br />
+            	    <select id="subject" name="subject">
+                	<option value="General">General</option>
+                	<option value="Mathematics">Mathematics</option>
+                	<option value="Physics">Physics</option>
+                	<option value="Chemistry">Chemistry</option>
+                	<option value="Geography">Geography</option>
+                	<option value="Technology">Technology</option>
+                	<option value="Agriculture">Agriculture</option>
+                	<option value="History">History</option>
+            	    </select><br /><br />
+
+            	    <label for="description">Description:</label><br />
+            	    <textarea id="description" name="description" rows="4" cols="40"></textarea><br /><br />
+
+           	    <button type="submit">Upload</button>
+       	        </form>
+                <p id="uploadStatus"></p>
+    	    </div>
+	</div>
+
+        <!-- File Listing Section -->
+        <div class="file-list-section">
+   		 <h2>📂 Available Documents</h2>
+		
+	       	 <!-- 🔍 Search Bar -->
+		 <div class="search-bar">
+        	     <input type="text" id="searchInput" placeholder="Search documents by name, subject, or description..." />
+    		 </div>
+
+        	 <!-- 📄 Document List -->
+   		 <div id="indexedFileList"></div>
+	</div>
+            
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2025 FutureEd Hub. All Rights Reserved.</p>
+            <p>Contact: <a href="mailto:support@futureedhub.com">support@futureedhub.com</a></p>
+            <p>Follow us on <a href="#">Twitter</a> | <a href="#">LinkedIn</a> | <a href="#">Facebook</a></p>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/slideshow.js"></script>
+    <script src="js/script.js"></script> <!-- Handles file upload and fetching -->
+</body>
+</html>
