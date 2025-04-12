@@ -62,7 +62,7 @@ This frontend is served as static content on an EC2 instance. In a production-re
 
 ## 💡 Next Steps (Phases 2 & 3)
 
-- 🔁 Dynamic routing & componentizatin (React or JS frameworks)
+- 🔁 Dynamic routing & componentization (React or JS frameworks)
 - 🗂️ Static hosting via Amazon S3 + CloudFront + Route 53
 - 🤖 Advanced search using NLP/ML
 - 🧑‍🏫 Role-based dashboards for teachers & learners
