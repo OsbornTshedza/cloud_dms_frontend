@@ -72,9 +72,14 @@ This frontend is served as static content on an EC2 instance. In a production-re
 
 ## 👤 Author
 
-**Osborn Tshedza**  
+**Osborn Tshedza Nethathe**  
 Cloud, DevOps & MLOps Student Engineer  
-🔗 [LinkedIn](https://www.linkedin.com/in/YOUR-LINK) | [Blog](https://yourblog.com)
+---
+## 🔗 Connect with Me & Explore More
+
+- 📝 [Read the Blog on Medium](https://medium.com/@tshedzanethathe/building-a-cloud-native-document-management-system-on-aws-my-first-real-world-project-8a3370d3a802)
+- 💼 [Connect on LinkedIn](https://www.linkedin.com/in/osborn-tshedza-nethathe-503679122/)
+
 
 ---
 
