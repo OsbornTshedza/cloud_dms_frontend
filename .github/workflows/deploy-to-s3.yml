@@ -1,0 +1,41 @@
+name: Deploy Frontend to S3
+
+on:
+  push:
+    branches:
+      - main  # Triggers the workflow on push to the main branch
+
+jobs:
+  deploy:
+    name: Sync frontend with S3
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Sync files to S3
+        run: |
+          aws s3 sync . s3://${{ secrets.S3_BUCKET_NAME }} \
+            --delete \
+            --exclude ".git/*" \
+            --exclude ".github/*" \
+            --exclude "*.md" \
+            --acl public-read
+
+      - name: Invalidate CloudFront cache (optional for Phase 3)
+        if: false  # Set to true if needed later
+        run: echo "Cache invalidation would go here"
+
+# Notes:
+# - Add AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_REGION, and S3_BUCKET_NAME as GitHub Secrets
+# - `--delete` ensures removed files are also cleaned up from S3
+# - `--exclude` filters out Git-related files and docs
+# - ACL is public-read for now; for stricter control, use bucket policy-based access
