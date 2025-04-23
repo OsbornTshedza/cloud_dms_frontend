@@ -21,6 +21,17 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
+      - name: Preview files to be deleted (debug)
+        run: |
+          aws s3 sync . s3://${{ secrets.S3_BUCKET_NAME }} \
+            --delete \
+            --dryrun \
+            --exclude ".git/*" \
+            --exclude ".github/*" \
+            --exclude "*.md" \
+            --exclude "LICENSE" \
+            --exclude "/.gitignore"
+
       - name: Sync files to S3
         run: |
           aws s3 sync . s3://${{ secrets.S3_BUCKET_NAME }} \
@@ -32,11 +43,9 @@ jobs:
             --exclude "/.gitignore"
 
       - name: Invalidate CloudFront cache (For Phase 3)
-        if: false  # Set to true if needed later
+        if: false
         run: echo "Cache invalidation would go here"
 
 # Notes:
-# - Add AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_REGION, and S3_BUCKET_NAME as GitHub Secrets
-# - --delete ensures removed files are also cleaned up from S3
-# - --exclude filters out Git-related files and docs
-# - Use bucket policy for public access instead of ACL
+# - --dryrun shows what will be deleted without taking action
+# - Confirm that `.gitignore` is listed in the delete log
