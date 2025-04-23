@@ -28,7 +28,7 @@ jobs:
             --exclude ".git/*" \
             --exclude ".github/*" \
             --exclude "*.md" \
-            --exclude "LICENSE"
+            --exclude "LICENSE" \
             --exclude ".gitignore"
 
       - name: Invalidate CloudFront cache (For Phase 3)
