@@ -8,7 +8,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const indexedFileList = document.getElementById("indexedFileList");
     const searchInput = document.getElementById("searchInput");
 
-    const API_BASE_URL = "http://3.95.206.159:5000";
+    const API_BASE_URL = "https://nizww8mhtd.execute-api.us-east-1.amazonaws.com/prod";
+";
 
     let allIndexedDocs = []; // ⬅️ Store for search filter
 
