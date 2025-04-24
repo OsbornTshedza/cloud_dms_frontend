@@ -42,10 +42,14 @@ jobs:
             --exclude "LICENSE" \
             --exclude ".gitignore"
 
+      - name: Manually delete .gitignore from S3
+        run: |
+          aws s3 rm s3://${{ secrets.S3_BUCKET_NAME }}/.gitignore || echo "No .gitignore to delete"
+
       - name: Invalidate CloudFront cache (For Phase 3)
         if: false
         run: echo "Cache invalidation would go here"
 
 # Notes:
-# - --dryrun shows what will be deleted without taking action
-# - Confirm that `.gitignore` is listed in the delete log
+# - We exclude .gitignore AND explicitly delete it
+# - Once clean, you can safely reintroduce .gitignore locally without risking S3 bloat
