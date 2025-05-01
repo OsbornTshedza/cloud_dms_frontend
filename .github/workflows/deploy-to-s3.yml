@@ -50,6 +50,20 @@ jobs:
         if: false
         run: echo "Cache invalidation would go here"
 
-# Notes:
-# - We exclude .gitignore AND explicitly delete it
-# - Once clean, you can safely reintroduce .gitignore locally without risking S3 bloat
+      - name: Notify Slack on success
+        if: success()
+        uses: 8398a7/action-slack@v3
+        with:
+          status: success
+          fields: repo,message,commit,author
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+      - name: Notify Slack on failure
+        if: failure()
+        uses: 8398a7/action-slack@v3
+        with:
+          status: failure
+          fields: repo,message,commit,author
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
