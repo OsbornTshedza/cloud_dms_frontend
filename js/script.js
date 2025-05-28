@@ -8,6 +8,30 @@ document.addEventListener("DOMContentLoaded", function () {
     const indexedFileList = document.getElementById("indexedFileList");
     const searchInput = document.getElementById("searchInput");
 
+    // Cognito Config
+    const COGNITO_DOMAIN = "https://us-east-1pgtkjvlse.auth.us-east-1.amazoncognito.com";
+    const CLIENT_ID = "2sl6a1ask8nci394q48247tbks";
+    const REDIRECT_URI = "https://d1momlis22uy3v.cloudfront.net";
+
+    // Add Cognito login/logout handlers
+    const loginButton = document.getElementById("loginButton");
+    const logoutButton = document.getElementById("logoutButton");
+
+    if (loginButton) {
+        loginButton.addEventListener("click", () => {
+            const loginUrl = `${COGNITO_DOMAIN}/login?client_id=${CLIENT_ID}&response_type=code&scope=email+openid+phone&redirect_uri=${REDIRECT_URI}`;
+            window.location.href = loginUrl;
+        });
+    }
+
+    if (logoutButton) {
+        logoutButton.addEventListener("click", () => {
+            const logoutUrl = `${COGNITO_DOMAIN}/logout?client_id=${CLIENT_ID}&logout_uri=${REDIRECT_URI}`;
+            window.location.href = logoutUrl;
+        });
+    }
+
+    // API Gateway Base URL
     const API_BASE_URL = "https://nizww8mhtd.execute-api.us-east-1.amazonaws.com/prod";
 
     let allIndexedDocs = []; // ⬅️ Store for search filter
