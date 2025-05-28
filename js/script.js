@@ -14,8 +14,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const REDIRECT_URI = "https://d1momlis22uy3v.cloudfront.net";
 
     // Add Cognito login/logout handlers
-    const loginButton = document.getElementById("loginButton");
-    const logoutButton = document.getElementById("logoutButton");
+    const loginButton = document.getElementById("login-btn");
+    const logoutButton = document.getElementById("logout-btn");
 
     if (loginButton) {
         loginButton.addEventListener("click", () => {
