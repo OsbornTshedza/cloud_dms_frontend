@@ -47,33 +47,6 @@ body {
     text-decoration: underline;
 }
 
-/* Auth Buttons Styling */
-.auth-buttons {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.auth-buttons button {
-    padding: 10px 20px;
-    margin: 5px;
-    border: none;
-    background-color: #3498db;
-    color: white;
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.auth-buttons button:hover {
-    background-color: #2980b9;
-}
-
-.auth-buttons button:active {
-    background-color: #2471a3;
-}
-
-
 /* Main Content */
 .main-content {
     margin-left: 240px;
