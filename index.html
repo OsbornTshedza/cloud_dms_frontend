@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FutureEd Hub</title>
     <link rel="stylesheet" href="css/style.css">
+    
+    <script>
+        // Auto-redirect to Cognito login if no ?code in URL
+        const urlParams = new URLSearchParams(window.location.search);
+        if (!urlParams.has('code')) {
+            window.location.href = 'https://us-east-1pgtkjvlse.auth.us-east-1.amazoncognito.com/login?client_id=2sl6a1ask8nci394q48247tbks&response_type=code&scope=email+openid+phone&redirect_uri=https://d1momlis22uy3v.cloudfront.net';
+        }
+    </script>
 </head>
 <body>
 
