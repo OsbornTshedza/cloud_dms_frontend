@@ -31,7 +31,7 @@ cloud_dms_frontend/
 │   └── deploy.yml             # CI/CD pipeline (S3 sync + CloudFront invalidation)
 ├── .gitignore
 ├── LICENSE
-└── [README.md](http://readme.md/)                  # You are here
+└── README.md                  # You are here
 
 ---
 
