@@ -20,17 +20,29 @@ It allows users to upload, view, and manage educational documents via a clean, d
 ## 📂 Folder Structure
 
 cloud_dms_frontend/
+
 ├── index.html # Main frontend entry point
+
 ├── css/
+
 │ └── style.css # Styling and layout
+
 ├── js/
+
 │ ├── script.js # Handles API calls and DOM logic
+
 │ └── slideshow.js # Homepage slideshow functionality
+
 ├── static_image/ # Subject icons and other images
+
 ├── .github/workflows/
+
 │ └── deploy.yml # CI/CD pipeline (S3 sync + CloudFront invalidation)
+
 ├── .gitignore
+
 ├── LICENSE
+
 └── README.md # You are here
 
 ---
