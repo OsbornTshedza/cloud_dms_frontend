@@ -29,15 +29,15 @@ cloud_dms_frontend/
 
 ├── js/
 
-  ├── script.js # Handles API calls and DOM logic
+   ├── script.js # Handles API calls and DOM logic
 
-  └── slideshow.js # Homepage slideshow functionality
+   └── slideshow.js # Homepage slideshow functionality
 
 ├── static_image/ # Subject icons and other images
 
 ├── .github/workflows/
 
-  └── deploy.yml # CI/CD pipeline (S3 sync + CloudFront invalidation)
+   └── deploy.yml # CI/CD pipeline (S3 sync + CloudFront invalidation)
 
 ├── .gitignore
 
